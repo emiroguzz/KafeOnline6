@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KafeOnline6.Data\KafeOnline6.Data.csproj" />
+    <Compile Remove="KafeOnline6.Data\**" />
+    <EmbeddedResource Remove="KafeOnline6.Data\**" />
+    <None Remove="KafeOnline6.Data\**" />
   </ItemGroup>
 
 </Project>
