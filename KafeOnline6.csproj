@@ -14,4 +14,8 @@
     <None Remove="KafeOnline6.Data\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="KafeOnline6.Data\KafeOnline6.Data.csproj" />
+  </ItemGroup>
+
 </Project>

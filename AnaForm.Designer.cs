@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components=new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaForm));
             menuStrip1=new MenuStrip();
             tsmiUrunler=new ToolStripMenuItem();
             tsmiGecmisSiparisler=new ToolStripMenuItem();
-            lvwUrunler=new ListView();
+            lvwMasalar=new ListView();
+            ilMasalar=new ImageList(components);
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,7 +43,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { tsmiUrunler, tsmiGecmisSiparisler });
             menuStrip1.Location=new Point(0, 0);
             menuStrip1.Name="menuStrip1";
-            menuStrip1.Size=new Size(614, 29);
+            menuStrip1.Size=new Size(565, 29);
             menuStrip1.TabIndex=0;
             menuStrip1.Text="menuStrip1";
             // 
@@ -57,22 +60,33 @@
             tsmiGecmisSiparisler.Name="tsmiGecmisSiparisler";
             tsmiGecmisSiparisler.Size=new Size(142, 25);
             tsmiGecmisSiparisler.Text="Geçmiş Siparişler";
+            tsmiGecmisSiparisler.Click+=tsmiGecmisSiparisler_Click;
             // 
-            // lvwUrunler
+            // lvwMasalar
             // 
-            lvwUrunler.Dock=DockStyle.Fill;
-            lvwUrunler.Location=new Point(0, 29);
-            lvwUrunler.Name="lvwUrunler";
-            lvwUrunler.Size=new Size(614, 421);
-            lvwUrunler.TabIndex=1;
-            lvwUrunler.UseCompatibleStateImageBehavior=false;
+            lvwMasalar.Dock=DockStyle.Fill;
+            lvwMasalar.LargeImageList=ilMasalar;
+            lvwMasalar.Location=new Point(0, 29);
+            lvwMasalar.Name="lvwMasalar";
+            lvwMasalar.Size=new Size(565, 421);
+            lvwMasalar.TabIndex=1;
+            lvwMasalar.UseCompatibleStateImageBehavior=false;
+            lvwMasalar.DoubleClick+=lvwMasalar_DoubleClick;
+            // 
+            // ilMasalar
+            // 
+            ilMasalar.ColorDepth=ColorDepth.Depth8Bit;
+            ilMasalar.ImageStream=(ImageListStreamer)resources.GetObject("ilMasalar.ImageStream");
+            ilMasalar.TransparentColor=Color.Transparent;
+            ilMasalar.Images.SetKeyName(0, "bos");
+            ilMasalar.Images.SetKeyName(1, "dolu");
             // 
             // AnaForm
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
-            ClientSize=new Size(614, 450);
-            Controls.Add(lvwUrunler);
+            ClientSize=new Size(565, 450);
+            Controls.Add(lvwMasalar);
             Controls.Add(menuStrip1);
             MainMenuStrip=menuStrip1;
             Name="AnaForm";
@@ -89,6 +103,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem tsmiUrunler;
         private ToolStripMenuItem tsmiGecmisSiparisler;
-        private ListView lvwUrunler;
+        private ListView lvwMasalar;
+        private ImageList ilMasalar;
     }
 }

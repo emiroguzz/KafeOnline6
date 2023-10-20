@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             label1=new Label();
-            dgvSiparişler=new DataGridView();
+            dgvSiparisler=new DataGridView();
             label2=new Label();
             splitContainer1=new SplitContainer();
             dgvSiparisDetaylar=new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvSiparişler).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSiparisler).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -51,15 +51,21 @@
             label1.TabIndex=0;
             label1.Text="Siparişler";
             // 
-            // dgvSiparişler
+            // dgvSiparisler
             // 
-            dgvSiparişler.Anchor=AnchorStyles.Top|AnchorStyles.Bottom|AnchorStyles.Left|AnchorStyles.Right;
-            dgvSiparişler.ColumnHeadersHeightSizeMode=DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSiparişler.Location=new Point(15, 33);
-            dgvSiparişler.Name="dgvSiparişler";
-            dgvSiparişler.RowTemplate.Height=25;
-            dgvSiparişler.Size=new Size(857, 217);
-            dgvSiparişler.TabIndex=1;
+            dgvSiparisler.Anchor=AnchorStyles.Top|AnchorStyles.Bottom|AnchorStyles.Left|AnchorStyles.Right;
+            dgvSiparisler.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvSiparisler.AutoSizeRowsMode=DataGridViewAutoSizeRowsMode.AllCells;
+            dgvSiparisler.ColumnHeadersHeightSizeMode=DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSiparisler.Location=new Point(15, 33);
+            dgvSiparisler.MultiSelect=false;
+            dgvSiparisler.Name="dgvSiparisler";
+            dgvSiparisler.RowHeadersVisible=false;
+            dgvSiparisler.RowTemplate.Height=25;
+            dgvSiparisler.SelectionMode=DataGridViewSelectionMode.FullRowSelect;
+            dgvSiparisler.Size=new Size(857, 217);
+            dgvSiparisler.TabIndex=1;
+            dgvSiparisler.SelectionChanged+=dgvSiparisler_SelectionChanged;
             // 
             // label2
             // 
@@ -80,7 +86,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(dgvSiparişler);
+            splitContainer1.Panel1.Controls.Add(dgvSiparisler);
             splitContainer1.Panel1.Controls.Add(label1);
             // 
             // splitContainer1.Panel2
@@ -94,10 +100,15 @@
             // dgvSiparisDetaylar
             // 
             dgvSiparisDetaylar.Anchor=AnchorStyles.Top|AnchorStyles.Bottom|AnchorStyles.Left|AnchorStyles.Right;
+            dgvSiparisDetaylar.AutoSizeColumnsMode=DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvSiparisDetaylar.AutoSizeRowsMode=DataGridViewAutoSizeRowsMode.AllCells;
             dgvSiparisDetaylar.ColumnHeadersHeightSizeMode=DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSiparisDetaylar.Location=new Point(12, 36);
+            dgvSiparisDetaylar.MultiSelect=false;
             dgvSiparisDetaylar.Name="dgvSiparisDetaylar";
+            dgvSiparisDetaylar.RowHeadersVisible=false;
             dgvSiparisDetaylar.RowTemplate.Height=25;
+            dgvSiparisDetaylar.SelectionMode=DataGridViewSelectionMode.FullRowSelect;
             dgvSiparisDetaylar.Size=new Size(860, 217);
             dgvSiparisDetaylar.TabIndex=3;
             // 
@@ -110,7 +121,7 @@
             Name="GecmisSiparislerForm";
             StartPosition=FormStartPosition.CenterParent;
             Text="Geçmiş Siparişler";
-            ((System.ComponentModel.ISupportInitialize)dgvSiparişler).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSiparisler).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -124,7 +135,7 @@
         #endregion
 
         private Label label1;
-        private DataGridView dgvSiparişler;
+        private DataGridView dgvSiparisler;
         private Label label2;
         private SplitContainer splitContainer1;
         private DataGridView dgvSiparisDetaylar;
